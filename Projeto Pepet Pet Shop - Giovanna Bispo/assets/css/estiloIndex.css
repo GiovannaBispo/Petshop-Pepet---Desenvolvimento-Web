@@ -1,0 +1,329 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #ffe4e1;
+    color: #333;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../imagens/fundo.png') repeat;
+    background-size: contain;
+    filter: blur(2px);
+    z-index: -1;
+}
+
+header {
+    background-color: #ffe4e1;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 4px solid #ffb6c1;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    box-shadow: 1px -4px 20px #939393;
+}
+
+header h1 {
+    margin: 0;
+    color: #ff5c8a;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: #ff5c8a;
+    cursor: pointer;
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle.rotated {
+    transform: rotate(90deg);
+}
+
+nav {
+    position: relative;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ff5c8a;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 15px;
+    background-color: #fff;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #ffb6c1;
+    color: #ffffff;
+}
+
+#logo-inicio {
+    filter: drop-shadow(1px 1px 3px #0000007a);
+    max-width: 100%;
+    height: auto;
+    max-height: 90px;
+    object-fit: contain;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main {
+    padding: 30px 15px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section h2 {
+    color: #ff5c8a;
+    margin-bottom: 20px;
+}
+
+.marcas-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.marca-card {
+    position: relative;
+    width: 100%;
+    max-width: 250px;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.marca-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.marca-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 24px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.marca-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    border-radius: 15px;
+}
+
+.marca-card:hover img {
+    transform: scale(1.05);
+}
+
+.marca-card:hover::after {
+    opacity: 1;
+}
+
+.marca-card:hover .marca-overlay {
+    opacity: 1;
+}
+
+.produtos-container, .servicos-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.produto-card, .servico-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+.produto-card img, .servico-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.produto-card:hover, .servico-card:hover {
+    transform: translateY(-5px);
+}
+
+.contato-container {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+
+.formulario-contato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 0 15px;
+}
+
+.formulario-contato input,
+.formulario-contato textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    border: 2px solid #ffb6c1;
+    border-radius: 10px;
+}
+
+.formulario-contato textarea {
+    resize: none;
+}
+
+.formulario-contato button {
+    background-color: #ff5c8a;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.formulario-contato button:hover {
+    background-color: #ff3370;
+}
+
+footer {
+    text-align: center;
+    background-color: #ffe4e1;
+    padding: 15px;
+    color: #333;
+    border-top: 4px solid #ffb6c1;
+}
+
+.botao-flutuante {
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    color: #ff5c8a;
+    border: 2px solid #ff5c8a;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 46px;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.botao-flutuante:hover {
+    background-color: #ff5c8a;
+    color: white;
+    transform: translateY(-5px);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+        background-color: #ffe4e1;
+        padding: 20px 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        border-bottom: 4px solid #ffb6c1;
+        border-bottom: 4px left #ffb6c1;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .produto-card, .servico-card {
+        max-width: 90%;
+    }
+
+    .marca-card {
+        height: auto;
+    }
+
+    #logo-inicio {
+        max-height: 80px;
+    }
+}
